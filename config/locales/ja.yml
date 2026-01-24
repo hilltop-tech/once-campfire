@@ -45,6 +45,29 @@ ja:
     show:
       title: "まだルームがありません"
 
+  # Account settings
+  accounts:
+    edit:
+      title: "アカウント設定"
+      set_up_chat_bots: "チャットボットを設定"
+      custom_styles: "カスタムスタイル"
+      upload_logo: "ロゴをアップロード"
+      delete_logo: "ロゴを削除"
+      name_placeholder: "このアカウントに名前を付ける"
+      save_changes: "変更を保存"
+      restrict_room_creation: "ルームの作成を管理者のみに制限"
+
+  # User profiles
+  profiles:
+    show:
+      log_out: "ログアウト"
+      upload_avatar: "アバターをアップロード"
+      delete_avatar: "アバターを削除"
+      name_placeholder: "名前を入力"
+      email_placeholder: "メールアドレスを入力"
+      password_placeholder: "パスワードを変更"
+      bio_placeholder: "自己紹介を入力してください…"
+
   # For screen readers
   screen_reader:
     go: "次へ"
@@ -53,3 +76,10 @@ ja:
     avatar: "アバター"
     save: "保存"
     add_your_avatar: "アバターを追加"
+    log_out: "ログアウト"
+    delete_avatar: "アバターを削除"
+    delete_logo: "ロゴを削除"
+    set_up_chat_bots: "チャットボットを設定"
+    custom_styles: "カスタムスタイル"
+    save_changes: "変更を保存"
+    upload_logo: "ロゴをアップロード"
