@@ -46,6 +46,7 @@ gem "net-http-persistent"
 gem "kredis"
 gem "platform_agent"
 gem "thruster"
+gem "rails-i18n"
 
 group :development, :test do
   gem "debug"

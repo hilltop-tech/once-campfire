@@ -14,6 +14,9 @@ module Campfire
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks rails_ext])
 
+    # Set default locale to Japanese
+    config.i18n.default_locale = :ja
+
     # Fallback to English if translation key is missing
     config.i18n.fallbacks = true
   end
