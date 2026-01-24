@@ -17,7 +17,10 @@ module Campfire
     # Set default locale to Japanese
     config.i18n.default_locale = :ja
 
+    # Available locales
+    config.i18n.available_locales = [:ja, :en]
+
     # Fallback to English if translation key is missing
-    config.i18n.fallbacks = true
+    config.i18n.fallbacks = [:en]
   end
 end
