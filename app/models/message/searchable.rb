@@ -6,7 +6,13 @@ module Message::Searchable
     after_update_commit  :update_in_index
     after_destroy_commit :remove_from_index
 
-    scope :search, ->(query) { joins("join message_search_index idx on messages.id = idx.rowid").where("idx.body match ?", query).ordered }
+    scope :search, ->(query) {
+      if ActiveRecord::Base.connection.adapter_name == 'PostgreSQL'
+        joins("join message_search_index idx on messages.id = idx.rowid").where("idx.body ILIKE ?", "%#{sanitize_sql_like(query)}%").ordered
+      else
+        joins("join message_search_index idx on messages.id = idx.rowid").where("idx.body match ?", query).ordered
+      end
+    }
   end
 
   private
