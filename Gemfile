@@ -9,6 +9,7 @@ gem "benchmark"
 
 # Drivers
 gem "sqlite3"
+gem "pg", "~> 1.5"
 gem "redis", "~> 5.4"
 
 # Deployment

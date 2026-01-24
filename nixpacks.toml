@@ -1,0 +1,15 @@
+[phases.setup]
+nixPkgs = ["postgresql", "openssl"]
+
+[phases.install]
+cmds = [
+  "bundle install --deployment --without development test"
+]
+
+[phases.build]
+cmds = [
+  "bundle exec rails assets:precompile"
+]
+
+[start]
+cmd = "bin/rails server -b 0.0.0.0 -p $PORT"
