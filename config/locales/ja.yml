@@ -1,0 +1,55 @@
+ja:
+  # Common
+  common:
+    save: "保存"
+    go: "次へ"
+    cancel: "キャンセル"
+    delete: "削除"
+    edit: "編集"
+    close: "閉じる"
+    back: "戻る"
+
+  # Sessions (Login)
+  sessions:
+    new:
+      title: "ログイン"
+      email_placeholder: "メールアドレスを入力"
+      password_placeholder: "パスワードを入力"
+      submit: "次へ"
+
+  # Users (Signup)
+  users:
+    new:
+      title: "新規登録"
+      sign_in_link: "ログイン"
+      upload_avatar: "アバターをアップロード"
+      avatar: "アバター"
+      name_placeholder: "名前"
+      email_placeholder: "メールアドレス"
+      password_placeholder: "パスワード"
+      submit: "保存"
+
+  # First run (Initial setup)
+  first_runs:
+    show:
+      title: "Campfireをセットアップ"
+      add_avatar: "アバターを追加"
+      avatar: "アバター"
+      name_placeholder: "名前"
+      email_placeholder: "メールアドレス"
+      password_placeholder: "パスワード"
+      submit: "保存"
+
+  # Welcome page
+  welcome:
+    show:
+      title: "まだルームがありません"
+
+  # For screen readers
+  screen_reader:
+    go: "次へ"
+    sign_in: "ログイン"
+    upload_avatar: "アバターをアップロード"
+    avatar: "アバター"
+    save: "保存"
+    add_your_avatar: "アバターを追加"
