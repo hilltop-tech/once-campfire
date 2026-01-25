@@ -32,8 +32,11 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # Workers do not work on JRuby or Windows (both of which do not support
 # processes).
 #
-worker_count = (Concurrent.processor_count * 0.666).ceil
-workers ENV.fetch("WEB_CONCURRENCY") { worker_count }
+# For small teams (<100 users), 2-3 workers is sufficient.
+# Default to 2 workers, which gives 10 concurrent requests (2 workers × 5 threads).
+# Can be overridden with WEB_CONCURRENCY environment variable.
+worker_count = ENV.fetch("WEB_CONCURRENCY") { 2 }.to_i
+workers worker_count
 
 ENV["JOB_CONCURRENCY"] ||= worker_count.to_s
 
@@ -42,7 +45,12 @@ ENV["JOB_CONCURRENCY"] ||= worker_count.to_s
 # before forking the application. This takes advantage of Copy On Write
 # process behavior so workers use less memory.
 #
-# preload_app!
+preload_app!
+
+# When using preload_app!, reconnect to the database in each worker
+on_worker_boot do
+  ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
+end
 
 # Allow puma to be restarted by `bin/rails restart` command.
 plugin :tmp_restart
